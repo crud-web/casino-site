@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Сайт</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #00e5ff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #b0bec5;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        button {
+            background-color: #00e5ff;
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #00b8cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Привет, мир! 🌍</h1>
+        <p>Это мой первый сайт, который я написал прямо на телефоне в Termux.</p>
+        
+        <div class="card">
+            <h2>Мои навыки</h2>
+            <p>Python • Telegram Bots • HTML • CSS</p>
+            <button onclick="alert('Кнопка работает!')">Нажми меня</button>
+        </div>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Casino Mini App</title>
+    <!-- Подключаем красивый шрифт (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        /* ЧЕРНО-БЕЛЫЙ ДИЗАЙН */
+        :root {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --accent: #ffffff;
+            --card-bg: #1a1a1a;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .balance {
+            font-size: 24px;
+            font-weight: 700;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .game-card {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .game-card:active {
+            transform: scale(0.95);
+            border-color: var(--accent);
+        }
+
+        .game-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .game-title {
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Стили для кейсов */
+        .cases-section {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 30px;
+        }
+        
+        .case-banner {
+            background: linear-gradient(45deg, #111, #333);
+            border: 1px solid #555;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>BLACK CASINO</h1>
+    <div class="balance" id="user-balance">Баланс: 100 ⭐</div>
+
+    <div class="games-grid">
+        <!-- Игра 1 -->
+        <div class="game-card" onclick="playGame('rocket')">
+            <div class="game-icon">🚀</div>
+            <div class="game-title">Ракетка</div>
+        </div>
+        <!-- Игра 2 -->
+        <div class="game-card" onclick="playGame('mines')">
+            <div class="game-icon">💣</div>
+            <div class="game-title">Мины</div>
+        </div>
+        <!-- Игра 3 -->
+        <div class="game-card" onclick="playGame('plinko')">
+            <div class="game-icon">🔴</div>
+            <div class="game-title">Плинко</div>
+        </div>
+        <!-- Игра 4 -->
+        <div class="game-card" onclick="playGame('cases')">
+            <div class="game-icon">🎁</div>
+            <div class="game-title">Кейсы NFT</div>
+        </div>
+    </div>
+
+    <div class="cases-section">
+        <h3 style="text-align:center; font-weight:400;">NFT ПОДАРКИ</h3>
+        <div class="case-banner">
+            <div style="font-size: 40px; margin-bottom: 10px;">🧸</div>
+            <div>Мишки & Цветы</div>
+            <button style="background:white; color:black; border:none; padding:10px 20px; border-radius:8px; margin-top:15px; font-weight:bold; cursor:pointer;" onclick="playGame('nft')">Открыть за 50 ⭐</button>
+        </div>
+    </div>
+
+    <script>
+        // Инициализация Telegram WebApp
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // Разворачиваем на весь экран
+
+        // Получаем данные пользователя (можно отправлять на сервер)
+        let user = tg.initDataUnsafe?.user;
+        if (user) {
+            console.log("Игрок:", user.first_name);
+        }
+
+        // Функция-заглушка для игр
+        function playGame(gameName) {
+            // Вибрация при нажатии (если поддерживается)
+            tg.HapticFeedback.impactOccurred('medium');
+            
+            // Показываем всплывающее окно
+            tg.showAlert(`Вы запустили игру: ${gameName.toUpperCase()}.\nДля реальной игры нужен бэкенд (сервер).`);
+            
+            // В будущем здесь будет логика отправки запроса на сервер
+        }
+    </script>
+</body>
+</html>
